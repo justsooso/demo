@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+	<head>
+		<meta  charset="UTF-8" />
+<!-- 		<script th:src="@{/js/jquery-1.8.0.min.js}"></script> -->
+		<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
+		<title>Hello</title>
+	</head>
+	<body style=" max-width: 7.5rem;margin: 0 auto;">
+		<header>welcome</header>
+		<br/>
+		<br/>
+		<br/>
+		<div align="left" >
+			<form action="/login/in" id="form">
+				用户名：<input id="namea" name="username" type="text" style="margin-bottom: 20px"></input>
+				密码：<input id="passd" name="password" type="password" style="margin-bottom: 20px" ></input>
+					<input class="login"  type="button" value="登录"></input>
+			</form>
+		</div>
+		 <img alt="" th:src="@{/static/img/my-new.png}"/>
+	</body>
+	
+	<script type="text/javascript">
+		$('.login').click(function (){
+			 $('#form').submit();
+		})
+	</script>
+</html>

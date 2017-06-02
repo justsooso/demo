@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="utf-8"/>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <meta name="description" content="javascript" />
+	    <meta name="Keywords" content="javascript" />
+	    <title id="title">微dd</title>
+</head>
+<body style="height:auto;width:auto;">
+   <head> 
+        <title>无标题文档</title> 
+    </head>
+    <section>
+    	<div>
+    		<img alt="" th:src="@{/static/img/my-new.png}"/>
+		    <p th:text="'Hello, ' + ${name} + '!'" />
+    	</div>
+    	<div id="Container">
+            <div id="header">顶部（header）</div>
+            <div id="main">主体部分（main）</div>
+            <div id="footer">底部（footer）</div>
+    </div>
+    </section>
+</body>
+</html>
