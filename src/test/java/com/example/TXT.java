@@ -48,8 +48,6 @@ ELSE
 		4
 	)
 END AS goods_unit_price,
-
-
  CASE COALESCE (COUNT(DISTINCT(b. ID)), 0)
 WHEN 0 THEN
 	0
@@ -61,11 +59,9 @@ ELSE
 	COUNT (DISTINCT(b. ID))
 END
 END AS cus_goods_count,
-
  SUM (
 	round(COALESCE(A .goods_qty, 0), 4)
 ) AS sal_goods_qty,
-
  SUM (
 	round(
 		COALESCE (
@@ -94,8 +90,6 @@ END AS cus_goods_count,
 		2
 	)
 ) AS real_money,
-
-
  (
 	SUM (
 		round(
@@ -135,8 +129,6 @@ END AS cus_goods_count,
 		)
 	)
 ) AS batch_gross,
-
-
  CASE SUM (
 	round(
 		COALESCE (
@@ -212,9 +204,6 @@ ELSE
 		4
 	)
 END AS batch_gross_rate,
-
-
-
  SUM (
 	round(
 		(
@@ -394,8 +383,6 @@ END AS day_sal_money,
 	),
 	2
 ) AS vip_batch_gross,
-
-
  SUM (
 	round(
 		CASE
@@ -428,8 +415,6 @@ END AS day_sal_money,
 		2
 	)
 ) AS vip_batch_money,
-
-
  CASE (
 	CAST (MAX(b.busi_date) AS DATE) - CAST (MIN(b.busi_date) AS DATE) + 1
 )
@@ -450,9 +435,6 @@ ELSE
 		4
 	)
 END AS vip_day_sal_qty,
-
-
-
  CASE (
 	CAST (MAX(b.busi_date) AS DATE) - CAST (MIN(b.busi_date) AS DATE) + 1
 )
@@ -486,7 +468,6 @@ ELSE
 		2
 	)
 END AS vip_day_receive_money,
-
  CASE (
 	CAST (MAX(b.busi_date) AS DATE) - CAST (MIN(b.busi_date) AS DATE) + 1
 )
@@ -520,8 +501,6 @@ ELSE
 		2
 	)
 END AS vip_day_real_money,
-
-
  CASE SUM (
 	round(
 		COALESCE (
@@ -638,7 +617,7 @@ AND COALESCE (goods.goods_nature, 0) <> 3
 AND COALESCE (b.channel, 1) = 1
 AND b.busi_date >= '2017-06-01 00:00:00'
 AND b.busi_date <= '2017-06-29 23:59:59'
-and b.status = 1
+AND b.status = 1
 GROUP BY
 	retail.retail_code,
 	retail.retail_name
