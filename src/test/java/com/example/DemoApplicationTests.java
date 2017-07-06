@@ -1,5 +1,9 @@
 package com.example;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryMXBean;
+import java.lang.management.RuntimeMXBean;
+import java.lang.management.ThreadMXBean;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.Instant;
@@ -7,7 +11,11 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,15 +26,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@SpringApplicationConfiguration(classes = DemoApplication.class)
 public class DemoApplicationTests {
-
+	
+	public void dd(){
+	}
 //	@Test
 //	public void contextLoads() {
 //		
 //	}	117076
 //	呜喔呜。在 
 	/**
-	 * 
-	 * def getHtml(url):
     page = urllib.urlopen(url)
     html = page.read()
     return htmlcc
@@ -282,13 +290,35 @@ jdurl = "http://channel.jd.com/fashion.html"
 //		list.add(s);
 //		System.out.println(list);
 //		System.out.println(list.get(0));
-		Random r = new Random();
-		System.out.println(r.nextLong());
+//		Runtime runtime = Runtime.getRuntime();
+//		System.out.println(runtime.freeMemory()/ 1024L / 1024L);
+//		System.out.println(runtime.totalMemory()/ 1024L / 1024L);
+//		System.out.println(runtime.maxMemory()/ 1024L / 1024L);
+//		RuntimeMXBean runtimeMXBean = ManagementFactory.getRuntimeMXBean();
+//		System.out.println(runtimeMXBean.getVmName());
+//		runtime.gc();
+//		System.out.println(runtimeMXBean.getSpecName());
+//		System.out.println(runtimeMXBean.getLibraryPath());
+//		MemoryMXBean mm = ManagementFactory.getMemoryMXBean();
+//		System.out.println("heapMemoryUsage"+ mm.getHeapMemoryUsage());
+//		System.out.println(runtimeMXBean.getVmName());
+//		System.out.println("nonHeapMemoryUsage"+ mm.getNonHeapMemoryUsage());
+//		ThreadMXBean tm = ManagementFactory.getThreadMXBean();
+//		System.out.println("time :" + tm.getCurrentThreadCpuTime());
+//		System.out.println("  " + tm.getCurrentThreadCpuTime());
+//		System.out.println("threadCount"+ Integer.valueOf(tm.getThreadCount()));
+//		System.out.println("peakThreadCount"+ Integer.valueOf(tm.getPeakThreadCount()));
+		
 		
 	}
 	
 	public static boolean isNumeric(String str){ 
 	    Pattern pattern = Pattern.compile("[0-9]*"); 
+	    Matcher matcher = pattern.matcher(str);
+	    while (matcher.find()) {
+	    	System.out.println("-------------------");
+			System.out.println(matcher.group());
+		}
 	    return pattern.matcher(str).matches();    
 	 } 
 	
